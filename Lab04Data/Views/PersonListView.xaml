@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="KMA.ProgrammingInCSharp2019.Kreshchenko.Part2.Lab04Data.Views.PersonListView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Height="500" Width="1000">
+    <Grid>
+        <DataGrid ItemsSource="{Binding People, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False"
+                  CanUserResizeRows="False" IsReadOnly="True" SelectionChanged="OnSelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Person ID" Binding="{Binding Guid}"/>
+                <DataGridTextColumn Header="First name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Last name" Binding="{Binding Surname}"/>
+                <DataGridTextColumn Header="E-mail" Binding="{Binding Email}"/>
+                <DataGridTextColumn Header="Date of birth" Binding="{Binding DateOfBirth}"/>
+                <DataGridTextColumn Header="Age" Binding="{Binding Age}"/>
+                <DataGridTextColumn Header="Is adult" Binding="{Binding IsAdult}"/>
+                <DataGridTextColumn Header="Is birthday" Binding="{Binding IsBirthday}"/>
+                <DataGridTextColumn Header="Sun sign" Binding="{Binding SunSign}"/>
+                <DataGridTextColumn Header="Chinese sign" Binding="{Binding ChineseSign}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

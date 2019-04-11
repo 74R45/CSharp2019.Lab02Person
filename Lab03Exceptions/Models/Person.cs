@@ -18,7 +18,7 @@ namespace KMA.ProgrammingInCSharp2019.Kreshchenko.Part2.Lab03Exceptions.Models
         public string Name
         {
             get => _name;
-            set
+            private set
             {
                 _name = value;
                 OnPropertyChanged();
@@ -28,7 +28,7 @@ namespace KMA.ProgrammingInCSharp2019.Kreshchenko.Part2.Lab03Exceptions.Models
         public string Surname
         {
             get => _surname;
-            set
+            private set
             {
                 _surname = value;
                 OnPropertyChanged();
@@ -38,7 +38,7 @@ namespace KMA.ProgrammingInCSharp2019.Kreshchenko.Part2.Lab03Exceptions.Models
         public string Email
         {
             get => _email;
-            set
+            private set
             {
                 _email = value;
                 OnPropertyChanged();
@@ -48,7 +48,7 @@ namespace KMA.ProgrammingInCSharp2019.Kreshchenko.Part2.Lab03Exceptions.Models
         public DateTime DateOfBirth
         {
             get => _dateOfBirth;
-            set
+            private set
             {
                 _dateOfBirth = value;
                 OnPropertyChanged();
@@ -159,7 +159,7 @@ namespace KMA.ProgrammingInCSharp2019.Kreshchenko.Part2.Lab03Exceptions.Models
 
         private static void VerifyName(string name, string errorMessage)
         {
-            if (!name.All(Char.IsLetter))
+            if (!name.All(char.IsLetter))
             {
                 throw new NameContainsNonLetterCharactersException(errorMessage, name);
             }

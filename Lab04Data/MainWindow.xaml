@@ -1,0 +1,30 @@
+﻿<Window x:Class="KMA.ProgrammingInCSharp2019.Kreshchenko.Part2.Lab04Data.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        mc:Ignorable="d"
+        Title="PersonInfo" MinHeight="570" MinWidth="1024" Height="570" Width="1024" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="2">
+            <MenuItem Header="File">
+                <MenuItem Header="Add">
+                    <MenuItem Header="New Person..." Command="{Binding CreatePersonCommand}"/>
+                    <MenuItem Header="Random Person" Command="{Binding CreateRandomCommand}"/>
+                </MenuItem>
+                <MenuItem Header="Exit" Command="{Binding ExitCommand}"/>
+            </MenuItem>
+            <MenuItem Header="Select">
+                <MenuItem Header="Edit" Command="{Binding EditCommand}"/>
+                <MenuItem Header="Delete" Command="{Binding DeleteCommand}"/>
+            </MenuItem>
+        </Menu>
+        <ContentControl Grid.Row="1" Name="_contentControl" IsEnabled="{Binding IsControlEnabled, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <fa:ImageAwesome Grid.Row="1" Icon="Refresh" Width="50" Height="50" Spin="True" Visibility="{Binding LoaderVisibility, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+    </Grid>
+</Window>
